@@ -6,6 +6,7 @@ import HomeSvg from './Svgs/HomeSvg'
 import TemplatesSvg from './Svgs/TemplatesSvg'
 import EditSvg from './Svgs/EditSvg'
 import MailerSvg from './Svgs/MailerSvg'
+import { Outlet,NavLink } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,9 +26,9 @@ function App() {
   <ul>
 
 <li className='icon text-center w-[16vw]  lg:w-[7vw] mb-2 text-sm lg:text-lg font-bold flex items-center justify-center '><MailerSvg/> Mailer</li>
-           <li className='bg-gray-200 w-[16vw]  lg:w-[7vw] flex justify-center rounded-md mb-2  '> <HomeSvg /></li>
-          <li className='bg-gray-200 w-[16vw]  lg:w-[7vw] flex justify-center rounded-md mb-2  '>  <TemplatesSvg /></li>
-            <li className='bg-gray-200 w-[16vw]  lg:w-[7vw] flex justify-center rounded-md mb-2 '><EditSvg /></li>
+       <NavLink to='/home'> <li className='bg-gray-200 w-[16vw]  lg:w-[7vw] flex justify-center rounded-md mb-2  '> <HomeSvg /></li></NavLink>
+          <NavLink to='/templates'><li className='bg-gray-200 w-[16vw]  lg:w-[7vw] flex justify-center rounded-md mb-2  '>  <TemplatesSvg /></li></NavLink>
+            <NavLink to='/editor'><li className='bg-gray-200 w-[16vw]  lg:w-[7vw] flex justify-center rounded-md mb-2 '><EditSvg /></li></NavLink>
 
             </ul>
             </div>
@@ -37,8 +38,8 @@ function App() {
 
         </div>
 
-        <div className="right-section w-4/5 lg:w-[90vw] bg-green-500">
-          f
+        <div className="right-section w-4/5 lg:w-[90vw] bg-gray-50">
+          <Outlet/>
 
         </div>
       </div>
