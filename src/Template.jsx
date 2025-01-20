@@ -4,11 +4,17 @@ import { NavLink, Outlet } from 'react-router-dom'
 const Template = () => {
   return (
     <div>
-      <NavLink to='/templates/template1'><div className="temmplate">1</div></NavLink>
-     <NavLink to='/templates/template2'> <div className="template2">2</div></NavLink>
+          <div className='flex gap-1  justify-center'>
+      <NavLink to='/templates/template1'><div className="temmplate w-[40vw] lg:w-[44vw] bg-gray-600 text-white text-center">Template1</div></NavLink>
+     <NavLink to='/templates/template2'> <div className="temmplate w-[40vw] lg:w-[44vw] bg-gray-600 text-white text-center">Template2</div></NavLink>
 
-     <Outlet/>
+     
     </div>
+    <div className="outlet flex justify-center">
+    <Outlet/>
+    </div>
+    </div>
+
   )
 }
 
